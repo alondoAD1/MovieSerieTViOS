@@ -1,0 +1,6 @@
+framework module Pods_GoNet_Examen_GoNet_ExamenUITests {
+  umbrella header "Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
