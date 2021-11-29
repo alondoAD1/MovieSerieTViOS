@@ -6,14 +6,16 @@ target 'GoNet Examen' do
   use_frameworks!
 
   # Pods for GoNet Examen
-#pod 'JGProgressHUD'
-pod "youtube-ios-player-helper", "~> 1.0.3"
+  pod "youtube-ios-player-helper", "~> 1.0.3"
+  pod 'RNCryptor', '~> 5.0'
+
   target 'GoNet ExamenTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
   target 'GoNet ExamenUITests' do
+
     # Pods for testing
   end
 

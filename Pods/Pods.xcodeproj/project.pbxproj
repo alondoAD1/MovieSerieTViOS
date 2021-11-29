@@ -7,39 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B25C40833101A439253C61331E9E9D2 /* Pods-GoNet Examen-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A25830CF74CA6F6B264DFE68891AC58 /* Pods-GoNet Examen-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1DD30E2BA59F31DD0B698AE8B51212CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2DB7D44B88EF9D12236F5E0DF1EC843C /* Pods-GoNet Examen-GoNet ExamenUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 993B22969C757137DCEE10BB1C02837C /* Pods-GoNet Examen-GoNet ExamenUITests-dummy.m */; };
-		4C034C2E0BB08AB6504BC382E95BEE19 /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBFE57F92A2BCA45F0B915636C2174B0 /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F5FA64DDE44104D3162784ED9AD3226 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A952A9049E5998128388F9E5A4CC4 /* YTPlayerView.m */; };
+		0FF0E22AFC6C5FEF79D49C28FD4EAE98 /* RNCryptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B7CC26B888BE16198EED17E630B8A4 /* RNCryptor-dummy.m */; };
+		220CF586645F8D5851F91B8EE6A4E457 /* Pods-GoNet Examen-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8502605773B1332BAA6AACF566838C /* Pods-GoNet Examen-dummy.m */; };
+		2F3802955BC880DA8BC7E17E19B4B55F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2F5E228739A4960C4556F1685833637B /* Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50BE0DFD79A362E9C7F6E7FEDA957F12 /* Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		333999B13BCE92B316ADA3622E9E9439 /* RNCryptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D63CC56B7CC372EB4813F4CF004522E /* RNCryptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C034C2E0BB08AB6504BC382E95BEE19 /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE2E691380190E910E4538C4910E75F6 /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F5FA64DDE44104D3162784ED9AD3226 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EBAD4CB7E071FE22934A7567CBEA88 /* YTPlayerView.m */; };
 		71D5C0B12875B482469193C785B56E31 /* Pods-GoNet ExamenTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A310F3554B1A25CBC0BCF9DFC97DC5B4 /* Pods-GoNet ExamenTests-dummy.m */; };
-		8E5D1DF54DE355CE2A82D629B0A72654 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		8F06181F47B9D71CF77F97261BA6C452 /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D0B88B1CA58F120B0DD63B31D8F08D /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C7B8914DE47EC480669C6BE2850AE22A /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7250721FFCCD343A0F32532251AD4810 /* Assets.bundle */; };
+		8F06181F47B9D71CF77F97261BA6C452 /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ECB1150A30407FA09B55FE62823F888 /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9998A5467D72B65B9B49CB6355F9E56B /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46203D27C54191FE093E6FFC4E10A862 /* RNCryptor.swift */; };
+		B907814608C44AA075E1FCAAF258B83C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C7B8914DE47EC480669C6BE2850AE22A /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5790A0229F8E4282137073B2B00A7885 /* Assets.bundle */; };
 		CA924F339F03FD72F8D1905F3B27CF4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		CE17C26F29A22A0A327BB194A42C58D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E1B11455CD1DA8868077BB5922433DF4 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F5144F9A0A4ADE00B187AF5D85E2BC /* youtube-ios-player-helper-dummy.m */; };
-		E43D77BC3E5358E1E011DD2CFD5E1CF7 /* Pods-GoNet Examen-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8502605773B1332BAA6AACF566838C /* Pods-GoNet Examen-dummy.m */; };
+		D54AB1300EB30866B91E41AA126C5E5E /* Pods-GoNet Examen-GoNet ExamenUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 993B22969C757137DCEE10BB1C02837C /* Pods-GoNet Examen-GoNet ExamenUITests-dummy.m */; };
+		D91CB2C5836092A36B5919FC6C02311F /* Pods-GoNet Examen-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A25830CF74CA6F6B264DFE68891AC58 /* Pods-GoNet Examen-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E13092C77D6DE1A89A9F75EB4B71123B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E1B11455CD1DA8868077BB5922433DF4 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 151AD738D5DBD98ABCB5AFC417C59999 /* youtube-ios-player-helper-dummy.m */; };
 		E9C6F6675F2A4D54D367212B07FA0FB8 /* Pods-GoNet ExamenTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A8B05744F084E5C43596500A65E891 /* Pods-GoNet ExamenTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4ACE6968BE16D495B337B724D86B005 /* Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50BE0DFD79A362E9C7F6E7FEDA957F12 /* Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		06834680A062DA06F630BC3C5671367A /* PBXContainerItemProxy */ = {
+		0C26617357E9A6C6AA4F2C2F6ACE5943 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8F04352AE9C74B4A83608A5FBA4FE35E;
 			remoteInfo = "Pods-GoNet Examen";
 		};
-		54AD61B331C3C2A0217ADAC3F57D2233 /* PBXContainerItemProxy */ = {
+		3DC5EC2B2587624DD53F64D12EF08654 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CCA2AD142519DF6FED0979BACBC149;
+			remoteInfo = RNCryptor;
+		};
+		922D53D37A43D107ACDDA767FE186794 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D1A7AF186BE136DE56FD5699070589B8;
 			remoteInfo = "youtube-ios-player-helper";
 		};
-		B1384E2F1F0562F586C8FA860E743A63 /* PBXContainerItemProxy */ = {
+		9D8131FF49BC1E421660ECA96F184B40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05CCA2AD142519DF6FED0979BACBC149;
+			remoteInfo = RNCryptor;
+		};
+		BB4244ED0755F48E50844153246032C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -50,26 +68,33 @@
 
 /* Begin PBXFileReference section */
 		0A4A6427B2B8E86FCE81772467DB238D /* Pods-GoNet ExamenTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoNet ExamenTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		19FA673E25BCD2E4336574B408D60C21 /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
+		0D63CC56B7CC372EB4813F4CF004522E /* RNCryptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-umbrella.h"; sourceTree = "<group>"; };
+		10B7CC26B888BE16198EED17E630B8A4 /* RNCryptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-dummy.m"; sourceTree = "<group>"; };
+		11D63CA16B5DF4528829918EAD196FAA /* youtube-ios-player-helper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "youtube-ios-player-helper-Info.plist"; sourceTree = "<group>"; };
+		136DD8368FEBD82DD559A7EE1E31B9A9 /* RNCryptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RNCryptor.modulemap; sourceTree = "<group>"; };
+		151AD738D5DBD98ABCB5AFC417C59999 /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
 		28FA6FCA4DC84D826AB8DBA3C5EE2DDD /* Pods-GoNet Examen-GoNet ExamenUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoNet Examen-GoNet ExamenUITests-Info.plist"; sourceTree = "<group>"; };
-		3538ACB60FE4B3D20C7615A0F6EFC83F /* youtube-ios-player-helper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "youtube-ios-player-helper-Info.plist"; sourceTree = "<group>"; };
 		38FFD493E3D0D11893169B1FD25D737D /* Pods-GoNet Examen-GoNet ExamenUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoNet Examen-GoNet ExamenUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3F8A952A9049E5998128388F9E5A4CC4 /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
+		3DF1A3CABCE0185909C07338F2218DE9 /* youtube-ios-player-helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.release.xcconfig"; sourceTree = "<group>"; };
+		3ECB1150A30407FA09B55FE62823F888 /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
 		4096A1C0B793AF026BCBE6444AF81AE4 /* Pods-GoNet Examen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoNet Examen.release.xcconfig"; sourceTree = "<group>"; };
 		4251FAC6DD969838B648ABB8086F2F18 /* Pods-GoNet Examen-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoNet Examen-frameworks.sh"; sourceTree = "<group>"; };
+		46203D27C54191FE093E6FFC4E10A862 /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RNCryptor.swift; path = Sources/RNCryptor/RNCryptor.swift; sourceTree = "<group>"; };
 		4A25830CF74CA6F6B264DFE68891AC58 /* Pods-GoNet Examen-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoNet Examen-umbrella.h"; sourceTree = "<group>"; };
 		50BE0DFD79A362E9C7F6E7FEDA957F12 /* Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h"; sourceTree = "<group>"; };
-		51F5144F9A0A4ADE00B187AF5D85E2BC /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
+		5790A0229F8E4282137073B2B00A7885 /* Assets.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Assets.bundle; path = "youtube-ios-player-helper/Assets.bundle"; sourceTree = "<group>"; };
 		5D8502605773B1332BAA6AACF566838C /* Pods-GoNet Examen-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoNet Examen-dummy.m"; sourceTree = "<group>"; };
 		6614CAC659158129362B06A9BE4C691F /* Pods-GoNet Examen-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoNet Examen-acknowledgements.plist"; sourceTree = "<group>"; };
-		6A4B950EB3E87B480993177716DB4793 /* youtube-ios-player-helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.release.xcconfig"; sourceTree = "<group>"; };
 		6E3911C02F661443FC2CDC7AFBBC00F7 /* Pods-GoNet Examen.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoNet Examen.modulemap"; sourceTree = "<group>"; };
-		7250721FFCCD343A0F32532251AD4810 /* Assets.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Assets.bundle; path = "youtube-ios-player-helper/Assets.bundle"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73793B3A749E1DBE18CC114CB55C648E /* Pods-GoNet Examen */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GoNet Examen"; path = Pods_GoNet_Examen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A28E6E3167783251A92D66BAD2E66C /* Pods-GoNet ExamenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoNet ExamenTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B69BD7C8DA356D8D09F5F3F704FC437 /* Pods-GoNet ExamenTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoNet ExamenTests-Info.plist"; sourceTree = "<group>"; };
+		7BB040ED60B3EC3114E2932F3660527A /* RNCryptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-prefix.pch"; sourceTree = "<group>"; };
 		8498A1B2C60117E181CA67921DDAE0B6 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8845B9EB8029B6F892772240B7E2A389 /* RNCryptor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RNCryptor-Info.plist"; sourceTree = "<group>"; };
+		8EFE0D578E93FD5227C46D2635398EE7 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
+		9419CD953991500027B619B6B6236E25 /* RNCryptor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.debug.xcconfig; sourceTree = "<group>"; };
 		9765B7C6AD25CF50ACAE00EC71A51093 /* Pods-GoNet Examen-GoNet ExamenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoNet Examen-GoNet ExamenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		97D0A9133AFEF78D017E694C13434908 /* Pods-GoNet ExamenTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoNet ExamenTests.modulemap"; sourceTree = "<group>"; };
 		993B22969C757137DCEE10BB1C02837C /* Pods-GoNet Examen-GoNet ExamenUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoNet Examen-GoNet ExamenUITests-dummy.m"; sourceTree = "<group>"; };
@@ -77,23 +102,33 @@
 		A310F3554B1A25CBC0BCF9DFC97DC5B4 /* Pods-GoNet ExamenTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoNet ExamenTests-dummy.m"; sourceTree = "<group>"; };
 		A5A8B05744F084E5C43596500A65E891 /* Pods-GoNet ExamenTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoNet ExamenTests-umbrella.h"; sourceTree = "<group>"; };
 		ACB81015AC2750625ACD22C2E5B17C5C /* Pods-GoNet ExamenTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GoNet ExamenTests"; path = Pods_GoNet_ExamenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5E5338D72F77BBF6DED2C8FB4BEF7A /* RNCryptor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.release.xcconfig; sourceTree = "<group>"; };
 		B707EA5CB8CB5D7C2956B139AE9549ED /* Pods-GoNet Examen-GoNet ExamenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoNet Examen-GoNet ExamenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9615EDDE897300BFF13A33638343B3C /* Pods-GoNet Examen-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoNet Examen-Info.plist"; sourceTree = "<group>"; };
 		BF251C0CF112174B0D0BB2D5CC8F1893 /* Pods-GoNet Examen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoNet Examen.debug.xcconfig"; sourceTree = "<group>"; };
 		C04C0E4934C6A8C345894BA21094E30C /* Pods-GoNet ExamenTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoNet ExamenTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C302414FD73D55E72ABACEDDDA4B481D /* Pods-GoNet Examen-GoNet ExamenUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GoNet Examen-GoNet ExamenUITests"; path = Pods_GoNet_Examen_GoNet_ExamenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA52D12C689D1C853C52BE58056CF4D7 /* youtube-ios-player-helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.debug.xcconfig"; sourceTree = "<group>"; };
 		CBE37474D5729357311FAB7525ABADBB /* Pods-GoNet Examen-GoNet ExamenUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GoNet Examen-GoNet ExamenUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		D1D0B88B1CA58F120B0DD63B31D8F08D /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
+		CE0E78FADA7EC5B419EAFBDF28AA13FA /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
 		DCCD31F1BE7DB16A85C9E00EB7C9F353 /* Pods-GoNet Examen-GoNet ExamenUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoNet Examen-GoNet ExamenUITests.modulemap"; sourceTree = "<group>"; };
 		E37E5FC6E3ABC0B8B56B82F50AE95A47 /* Pods-GoNet Examen-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoNet Examen-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EACC01C0D31634219D4F5FB894392444 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
 		EF5D0C6FD2D6B8E612F835449511173D /* Pods-GoNet ExamenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoNet ExamenTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F1DC84EB8856FDEA9DD1F830AC0B520D /* youtube-ios-player-helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.debug.xcconfig"; sourceTree = "<group>"; };
+		F3EBAD4CB7E071FE22934A7567CBEA88 /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
+		F6320389F628433B78C81FB217A0485D /* RNCryptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNCryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D409538E7BDB3861B91A40BC013B24 /* Pods-GoNet Examen-GoNet ExamenUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoNet Examen-GoNet ExamenUITests-frameworks.sh"; sourceTree = "<group>"; };
-		FBFE57F92A2BCA45F0B915636C2174B0 /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
+		FE2E691380190E910E4538C4910E75F6 /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28ACE38D0907007708C0893450643008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F3802955BC880DA8BC7E17E19B4B55F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		291E9AC59B30394EDC72C479F99F0B0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,11 +137,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5FF5680C6E61A66998AE8961E16B0F7B /* Frameworks */ = {
+		6997D601844B462591B22D9C828DBDD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DD30E2BA59F31DD0B698AE8B51212CD /* Foundation.framework in Frameworks */,
+				E13092C77D6DE1A89A9F75EB4B71123B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,17 +153,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D83BC9C7D5C351EC84D0B2ADB2D127AE /* Frameworks */ = {
+		FEF5257A57E1A1F49EC6A08A7F8A081F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E5D1DF54DE355CE2A82D629B0A72654 /* Foundation.framework in Frameworks */,
+				B907814608C44AA075E1FCAAF258B83C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0008680FB73E8E08B2618059A05D4DB4 /* RNCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				46203D27C54191FE093E6FFC4E10A862 /* RNCryptor.swift */,
+				CF369A46909B4580B54CAD2BBE790D1E /* Support Files */,
+			);
+			path = RNCryptor;
+			sourceTree = "<group>";
+		};
+		059273C1A7FA6D1F3FBD69860875BD16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5790A0229F8E4282137073B2B00A7885 /* Assets.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		136DAA0E4563888F5D91F783C3109E44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73793B3A749E1DBE18CC114CB55C648E /* Pods-GoNet Examen */,
+				C302414FD73D55E72ABACEDDDA4B481D /* Pods-GoNet Examen-GoNet ExamenUITests */,
+				ACB81015AC2750625ACD22C2E5B17C5C /* Pods-GoNet ExamenTests */,
+				F6320389F628433B78C81FB217A0485D /* RNCryptor.framework */,
+				8498A1B2C60117E181CA67921DDAE0B6 /* youtube_ios_player_helper.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4246F4251185EE5C5E3A9CCA73E14706 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,32 +203,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4360E8923BCCAA590FD4DE7549B35674 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EACC01C0D31634219D4F5FB894392444 /* youtube-ios-player-helper.modulemap */,
-				51F5144F9A0A4ADE00B187AF5D85E2BC /* youtube-ios-player-helper-dummy.m */,
-				3538ACB60FE4B3D20C7615A0F6EFC83F /* youtube-ios-player-helper-Info.plist */,
-				19FA673E25BCD2E4336574B408D60C21 /* youtube-ios-player-helper-prefix.pch */,
-				FBFE57F92A2BCA45F0B915636C2174B0 /* youtube-ios-player-helper-umbrella.h */,
-				F1DC84EB8856FDEA9DD1F830AC0B520D /* youtube-ios-player-helper.debug.xcconfig */,
-				6A4B950EB3E87B480993177716DB4793 /* youtube-ios-player-helper.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/youtube-ios-player-helper";
-			sourceTree = "<group>";
-		};
-		4D70307D60BABE480F7192B196041C87 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				73793B3A749E1DBE18CC114CB55C648E /* Pods-GoNet Examen */,
-				C302414FD73D55E72ABACEDDDA4B481D /* Pods-GoNet Examen-GoNet ExamenUITests */,
-				ACB81015AC2750625ACD22C2E5B17C5C /* Pods-GoNet ExamenTests */,
-				8498A1B2C60117E181CA67921DDAE0B6 /* youtube_ios_player_helper.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,15 +211,19 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6A928FDE4E2B19B2F70560D23FE57B58 /* youtube-ios-player-helper */ = {
+		702720CB99324F1C98566EFD1F6AD972 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D1D0B88B1CA58F120B0DD63B31D8F08D /* YTPlayerView.h */,
-				3F8A952A9049E5998128388F9E5A4CC4 /* YTPlayerView.m */,
-				AF19A57942DDA4DEFB3D4249E2416ED2 /* Resources */,
-				4360E8923BCCAA590FD4DE7549B35674 /* Support Files */,
+				8EFE0D578E93FD5227C46D2635398EE7 /* youtube-ios-player-helper.modulemap */,
+				151AD738D5DBD98ABCB5AFC417C59999 /* youtube-ios-player-helper-dummy.m */,
+				11D63CA16B5DF4528829918EAD196FAA /* youtube-ios-player-helper-Info.plist */,
+				CE0E78FADA7EC5B419EAFBDF28AA13FA /* youtube-ios-player-helper-prefix.pch */,
+				FE2E691380190E910E4538C4910E75F6 /* youtube-ios-player-helper-umbrella.h */,
+				CA52D12C689D1C853C52BE58056CF4D7 /* youtube-ios-player-helper.debug.xcconfig */,
+				3DF1A3CABCE0185909C07338F2218DE9 /* youtube-ios-player-helper.release.xcconfig */,
 			);
-			path = "youtube-ios-player-helper";
+			name = "Support Files";
+			path = "../Target Support Files/youtube-ios-player-helper";
 			sourceTree = "<group>";
 		};
 		70E810AB6A45E2A892392CD69A465997 /* Pods-GoNet Examen */ = {
@@ -201,20 +243,13 @@
 			path = "Target Support Files/Pods-GoNet Examen";
 			sourceTree = "<group>";
 		};
-		7E82C774E6F33AA2A504913032DF4E3D /* Pods */ = {
+		74EEA086BCEF2732884C088DE6FF400B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6A928FDE4E2B19B2F70560D23FE57B58 /* youtube-ios-player-helper */,
+				0008680FB73E8E08B2618059A05D4DB4 /* RNCryptor */,
+				E42406448502792A5C20A8DF5968CF5C /* youtube-ios-player-helper */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		AF19A57942DDA4DEFB3D4249E2416ED2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7250721FFCCD343A0F32532251AD4810 /* Assets.bundle */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		B144E84A65177E0FB56B26C9C6DD26E7 /* Pods-GoNet ExamenTests */ = {
@@ -238,10 +273,25 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				7E82C774E6F33AA2A504913032DF4E3D /* Pods */,
-				4D70307D60BABE480F7192B196041C87 /* Products */,
+				74EEA086BCEF2732884C088DE6FF400B /* Pods */,
+				136DAA0E4563888F5D91F783C3109E44 /* Products */,
 				4246F4251185EE5C5E3A9CCA73E14706 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		CF369A46909B4580B54CAD2BBE790D1E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				136DD8368FEBD82DD559A7EE1E31B9A9 /* RNCryptor.modulemap */,
+				10B7CC26B888BE16198EED17E630B8A4 /* RNCryptor-dummy.m */,
+				8845B9EB8029B6F892772240B7E2A389 /* RNCryptor-Info.plist */,
+				7BB040ED60B3EC3114E2932F3660527A /* RNCryptor-prefix.pch */,
+				0D63CC56B7CC372EB4813F4CF004522E /* RNCryptor-umbrella.h */,
+				9419CD953991500027B619B6B6236E25 /* RNCryptor.debug.xcconfig */,
+				AF5E5338D72F77BBF6DED2C8FB4BEF7A /* RNCryptor.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RNCryptor";
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -269,9 +319,28 @@
 			path = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests";
 			sourceTree = "<group>";
 		};
+		E42406448502792A5C20A8DF5968CF5C /* youtube-ios-player-helper */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB1150A30407FA09B55FE62823F888 /* YTPlayerView.h */,
+				F3EBAD4CB7E071FE22934A7567CBEA88 /* YTPlayerView.m */,
+				059273C1A7FA6D1F3FBD69860875BD16 /* Resources */,
+				702720CB99324F1C98566EFD1F6AD972 /* Support Files */,
+			);
+			path = "youtube-ios-player-helper";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		7C897C414DBBDBD81CBD5742ED62333A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				333999B13BCE92B316ADA3622E9E9439 /* RNCryptor-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CCB4B193B96EDB02984BD131BECEEA1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,11 +349,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F32B3D16C3CEE34FA33A83023FD9B40 /* Headers */ = {
+		9E0234F38EF49178488994D3DEF18586 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4ACE6968BE16D495B337B724D86B005 /* Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h in Headers */,
+				2F5E228739A4960C4556F1685833637B /* Pods-GoNet Examen-GoNet ExamenUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0578B1AD9F41A8DA78CBAA2F360A718 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D91CB2C5836092A36B5919FC6C02311F /* Pods-GoNet Examen-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,17 +374,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F6EDD1E3A58B06226C4ACCB0ED3A8583 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B25C40833101A439253C61331E9E9D2 /* Pods-GoNet Examen-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B300D8B511853425712CC6DAE52E171 /* Build configuration list for PBXNativeTarget "RNCryptor" */;
+			buildPhases = (
+				7C897C414DBBDBD81CBD5742ED62333A /* Headers */,
+				5F2DD3CE81A775A68D790B41628CC8BA /* Sources */,
+				28ACE38D0907007708C0893450643008 /* Frameworks */,
+				5304EC13A5214D9C74280B25FCF63BD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNCryptor;
+			productName = RNCryptor;
+			productReference = F6320389F628433B78C81FB217A0485D /* RNCryptor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		572728A6D0B2DCEC21064F276732FDB3 /* Pods-GoNet ExamenTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97401029D2E5B695C77A0F013A3BE6FE /* Build configuration list for PBXNativeTarget "Pods-GoNet ExamenTests" */;
@@ -320,7 +407,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D5CAFC11EDF704A6571F3DA1B9500E43 /* PBXTargetDependency */,
+				6D3FCEF48DA23D2359204D9CA452040F /* PBXTargetDependency */,
 			);
 			name = "Pods-GoNet ExamenTests";
 			productName = Pods_GoNet_ExamenTests;
@@ -329,17 +416,18 @@
 		};
 		8F04352AE9C74B4A83608A5FBA4FE35E /* Pods-GoNet Examen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C8082C3901E07F9C9C699375AC94439 /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen" */;
+			buildConfigurationList = 6D0DBF6B9AA8BC84282ADEF4FE4A31F7 /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen" */;
 			buildPhases = (
-				F6EDD1E3A58B06226C4ACCB0ED3A8583 /* Headers */,
-				5E9E8E65C7B65C8F4F20C89E26B60CC7 /* Sources */,
-				D83BC9C7D5C351EC84D0B2ADB2D127AE /* Frameworks */,
-				B1A1E95BA9FEE030A22BC75911EAD73C /* Resources */,
+				C0578B1AD9F41A8DA78CBAA2F360A718 /* Headers */,
+				EE4AB6C5F583AB392DE75B1BDB81D4CD /* Sources */,
+				6997D601844B462591B22D9C828DBDD6 /* Frameworks */,
+				1B858FA7EFED38064A89D13BC5C137DA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				911CC28925B737F074716D1EBFB3EFB0 /* PBXTargetDependency */,
+				C3F99BD6C6CD01B89E595ECCA4DEF116 /* PBXTargetDependency */,
+				9FCCF9AF4B1E893CE1B7F6A43376F126 /* PBXTargetDependency */,
 			);
 			name = "Pods-GoNet Examen";
 			productName = Pods_GoNet_Examen;
@@ -348,17 +436,18 @@
 		};
 		B27248884DB3B82D7C6E3560A043B37E /* Pods-GoNet Examen-GoNet ExamenUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF94C3CE9B332575E36CACE2BBC34EBD /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen-GoNet ExamenUITests" */;
+			buildConfigurationList = 94E6FAAE6B2E45E96D9AD25D51639082 /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen-GoNet ExamenUITests" */;
 			buildPhases = (
-				8F32B3D16C3CEE34FA33A83023FD9B40 /* Headers */,
-				179E47089D4B771626B7E0D973460CE4 /* Sources */,
-				5FF5680C6E61A66998AE8961E16B0F7B /* Frameworks */,
-				43FAF625B4278008AE34C65463CFF9A1 /* Resources */,
+				9E0234F38EF49178488994D3DEF18586 /* Headers */,
+				8B46539322122ADCC0CAB9D20A6C27F7 /* Sources */,
+				FEF5257A57E1A1F49EC6A08A7F8A081F /* Frameworks */,
+				0185C5E344F35F80D3AB6FE957C82C8F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4FE09EDEB464F662D543239D05AAA53D /* PBXTargetDependency */,
+				F85E6F28C55F041F4F3EF4DB56EA4C64 /* PBXTargetDependency */,
+				5ED5F79133FE4B65030D0EAF48BD1ED7 /* PBXTargetDependency */,
 			);
 			name = "Pods-GoNet Examen-GoNet ExamenUITests";
 			productName = Pods_GoNet_Examen_GoNet_ExamenUITests;
@@ -401,20 +490,35 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 4D70307D60BABE480F7192B196041C87 /* Products */;
+			productRefGroup = 136DAA0E4563888F5D91F783C3109E44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8F04352AE9C74B4A83608A5FBA4FE35E /* Pods-GoNet Examen */,
 				B27248884DB3B82D7C6E3560A043B37E /* Pods-GoNet Examen-GoNet ExamenUITests */,
 				572728A6D0B2DCEC21064F276732FDB3 /* Pods-GoNet ExamenTests */,
+				05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */,
 				D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		43FAF625B4278008AE34C65463CFF9A1 /* Resources */ = {
+		0185C5E344F35F80D3AB6FE957C82C8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B858FA7EFED38064A89D13BC5C137DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5304EC13A5214D9C74280B25FCF63BD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,13 +540,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1A1E95BA9FEE030A22BC75911EAD73C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -454,19 +551,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		179E47089D4B771626B7E0D973460CE4 /* Sources */ = {
+		5F2DD3CE81A775A68D790B41628CC8BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB7D44B88EF9D12236F5E0DF1EC843C /* Pods-GoNet Examen-GoNet ExamenUITests-dummy.m in Sources */,
+				9998A5467D72B65B9B49CB6355F9E56B /* RNCryptor.swift in Sources */,
+				0FF0E22AFC6C5FEF79D49C28FD4EAE98 /* RNCryptor-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E9E8E65C7B65C8F4F20C89E26B60CC7 /* Sources */ = {
+		8B46539322122ADCC0CAB9D20A6C27F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E43D77BC3E5358E1E011DD2CFD5E1CF7 /* Pods-GoNet Examen-dummy.m in Sources */,
+				D54AB1300EB30866B91E41AA126C5E5E /* Pods-GoNet Examen-GoNet ExamenUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,33 +577,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EE4AB6C5F583AB392DE75B1BDB81D4CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220CF586645F8D5851F91B8EE6A4E457 /* Pods-GoNet Examen-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4FE09EDEB464F662D543239D05AAA53D /* PBXTargetDependency */ = {
+		5ED5F79133FE4B65030D0EAF48BD1ED7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "youtube-ios-player-helper";
 			target = D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */;
-			targetProxy = 54AD61B331C3C2A0217ADAC3F57D2233 /* PBXContainerItemProxy */;
+			targetProxy = BB4244ED0755F48E50844153246032C5 /* PBXContainerItemProxy */;
 		};
-		911CC28925B737F074716D1EBFB3EFB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "youtube-ios-player-helper";
-			target = D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */;
-			targetProxy = B1384E2F1F0562F586C8FA860E743A63 /* PBXContainerItemProxy */;
-		};
-		D5CAFC11EDF704A6571F3DA1B9500E43 /* PBXTargetDependency */ = {
+		6D3FCEF48DA23D2359204D9CA452040F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-GoNet Examen";
 			target = 8F04352AE9C74B4A83608A5FBA4FE35E /* Pods-GoNet Examen */;
-			targetProxy = 06834680A062DA06F630BC3C5671367A /* PBXContainerItemProxy */;
+			targetProxy = 0C26617357E9A6C6AA4F2C2F6ACE5943 /* PBXContainerItemProxy */;
+		};
+		9FCCF9AF4B1E893CE1B7F6A43376F126 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "youtube-ios-player-helper";
+			target = D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */;
+			targetProxy = 922D53D37A43D107ACDDA767FE186794 /* PBXContainerItemProxy */;
+		};
+		C3F99BD6C6CD01B89E595ECCA4DEF116 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RNCryptor;
+			target = 05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */;
+			targetProxy = 9D8131FF49BC1E421660ECA96F184B40 /* PBXContainerItemProxy */;
+		};
+		F85E6F28C55F041F4F3EF4DB56EA4C64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RNCryptor;
+			target = 05CCA2AD142519DF6FED0979BACBC149 /* RNCryptor */;
+			targetProxy = 3DC5EC2B2587624DD53F64D12EF08654 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2DC6EF46448F314A8F031EF2FABE7793 /* Debug */ = {
+		0C04BF5578232E4C6AFA10C1899AD145 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B707EA5CB8CB5D7C2956B139AE9549ED /* Pods-GoNet Examen-GoNet ExamenUITests.debug.xcconfig */;
+			baseConfigurationReference = 4096A1C0B793AF026BCBE6444AF81AE4 /* Pods-GoNet Examen.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -517,7 +635,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoNet Examen/Pods-GoNet Examen-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,7 +644,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoNet Examen/Pods-GoNet Examen.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -535,10 +653,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		617B0A130EF8BC96319562AE94EA5BC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -577,9 +696,9 @@
 			};
 			name = Debug;
 		};
-		648123CDA176D701171D1E1E969AD322 /* Release */ = {
+		6BBD0F265D33D2CCC5840FEEF8E43A98 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4096A1C0B793AF026BCBE6444AF81AE4 /* Pods-GoNet Examen.release.xcconfig */;
+			baseConfigurationReference = B707EA5CB8CB5D7C2956B139AE9549ED /* Pods-GoNet Examen-GoNet ExamenUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -591,7 +710,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoNet Examen/Pods-GoNet Examen-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -600,7 +719,44 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GoNet Examen/Pods-GoNet Examen.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7EF57F717F34C9BBE6201BC67938CF39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9765B7C6AD25CF50ACAE00EC71A51093 /* Pods-GoNet Examen-GoNet ExamenUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -743,43 +899,7 @@
 			};
 			name = Release;
 		};
-		A30614DA0DE52296F09015AC5C81CD37 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A4B950EB3E87B480993177716DB4793 /* youtube-ios-player-helper.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper.modulemap";
-				PRODUCT_MODULE_NAME = youtube_ios_player_helper;
-				PRODUCT_NAME = youtube_ios_player_helper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C2C161DCE531FCCFFE44BCE3BBE6AC86 /* Debug */ = {
+		9D34BE14ED889DC4746D69B22E32DC3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF251C0CF112174B0D0BB2D5CC8F1893 /* Pods-GoNet Examen.debug.xcconfig */;
 			buildSettings = {
@@ -816,11 +936,10 @@
 			};
 			name = Debug;
 		};
-		C64F3786E9B1BDF63A76F21F6BE90901 /* Release */ = {
+		A30614DA0DE52296F09015AC5C81CD37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9765B7C6AD25CF50ACAE00EC71A51093 /* Pods-GoNet Examen-GoNet ExamenUITests.release.xcconfig */;
+			baseConfigurationReference = 3DF1A3CABCE0185909C07338F2218DE9 /* youtube-ios-player-helper.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -830,23 +949,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GoNet Examen-GoNet ExamenUITests/Pods-GoNet Examen-GoNet ExamenUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/youtube-ios-player-helper/youtube-ios-player-helper.modulemap";
+				PRODUCT_MODULE_NAME = youtube_ios_player_helper;
+				PRODUCT_NAME = youtube_ios_player_helper;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -854,9 +972,78 @@
 			};
 			name = Release;
 		};
+		D6B53D853DB4B628F650AA7AE50B0AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF5E5338D72F77BBF6DED2C8FB4BEF7A /* RNCryptor.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor/RNCryptor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor/RNCryptor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RNCryptor/RNCryptor.modulemap";
+				PRODUCT_MODULE_NAME = RNCryptor;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D8E3B16E6117FAFEB04462C26051DDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9419CD953991500027B619B6B6236E25 /* RNCryptor.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNCryptor/RNCryptor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNCryptor/RNCryptor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RNCryptor/RNCryptor.modulemap";
+				PRODUCT_MODULE_NAME = RNCryptor;
+				PRODUCT_NAME = RNCryptor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E74946DCFEFDF866F09F390F5065ED18 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1DC84EB8856FDEA9DD1F830AC0B520D /* youtube-ios-player-helper.debug.xcconfig */;
+			baseConfigurationReference = CA52D12C689D1C853C52BE58056CF4D7 /* youtube-ios-player-helper.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -930,11 +1117,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C8082C3901E07F9C9C699375AC94439 /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen" */ = {
+		1B300D8B511853425712CC6DAE52E171 /* Build configuration list for PBXNativeTarget "RNCryptor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2C161DCE531FCCFFE44BCE3BBE6AC86 /* Debug */,
-				648123CDA176D701171D1E1E969AD322 /* Release */,
+				D8E3B16E6117FAFEB04462C26051DDDE /* Debug */,
+				D6B53D853DB4B628F650AA7AE50B0AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -948,6 +1135,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6D0DBF6B9AA8BC84282ADEF4FE4A31F7 /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D34BE14ED889DC4746D69B22E32DC3E /* Debug */,
+				0C04BF5578232E4C6AFA10C1899AD145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		829F07E83178D33207289B22811DD63F /* Build configuration list for PBXNativeTarget "youtube-ios-player-helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -957,20 +1153,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		94E6FAAE6B2E45E96D9AD25D51639082 /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen-GoNet ExamenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BBD0F265D33D2CCC5840FEEF8E43A98 /* Debug */,
+				7EF57F717F34C9BBE6201BC67938CF39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		97401029D2E5B695C77A0F013A3BE6FE /* Build configuration list for PBXNativeTarget "Pods-GoNet ExamenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				617B0A130EF8BC96319562AE94EA5BC2 /* Debug */,
 				F76C8B8A587C789749432244AE10B9AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF94C3CE9B332575E36CACE2BBC34EBD /* Build configuration list for PBXNativeTarget "Pods-GoNet Examen-GoNet ExamenUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2DC6EF46448F314A8F031EF2FABE7793 /* Debug */,
-				C64F3786E9B1BDF63A76F21F6BE90901 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

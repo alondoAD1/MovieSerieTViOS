@@ -13,7 +13,7 @@
 		00139519274FDC2800105392 /* DarkMode.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00139518274FDC2800105392 /* DarkMode.xcassets */; };
 		0013951B2750596000105392 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0013951A2750596000105392 /* MovieCollectionViewCell.swift */; };
 		0013951D27506CF100105392 /* MoviesHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0013951C27506CF100105392 /* MoviesHeaderCollectionReusableView.swift */; };
-		001395212750BBEE00105392 /* imageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001395202750BBEE00105392 /* imageURL.swift */; };
+		001395212750BBEE00105392 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001395202750BBEE00105392 /* Tools.swift */; };
 		001395232751459B00105392 /* TVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001395222751459B00105392 /* TVTableViewCell.swift */; };
 		001395252751622300105392 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001395242751622300105392 /* DetailsViewController.swift */; };
 		001395282751DE8700105392 /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001395272751DE8700105392 /* InternetConnectionManager.swift */; };
@@ -55,7 +55,7 @@
 		00139518274FDC2800105392 /* DarkMode.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DarkMode.xcassets; sourceTree = "<group>"; };
 		0013951A2750596000105392 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		0013951C27506CF100105392 /* MoviesHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		001395202750BBEE00105392 /* imageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageURL.swift; sourceTree = "<group>"; };
+		001395202750BBEE00105392 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		001395222751459B00105392 /* TVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTableViewCell.swift; sourceTree = "<group>"; };
 		001395242751622300105392 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		001395272751DE8700105392 /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
@@ -140,12 +140,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0013950D274EAAE400105392 /* Netrworking */ = {
+		0013950D274EAAE400105392 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				001395202750BBEE00105392 /* imageURL.swift */,
+				001395202750BBEE00105392 /* Tools.swift */,
 			);
-			path = Netrworking;
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		001395262751DE6E00105392 /* Conection */ = {
@@ -154,6 +154,13 @@
 				001395272751DE8700105392 /* InternetConnectionManager.swift */,
 			);
 			path = Conection;
+			sourceTree = "<group>";
+		};
+		003E6B562754825D00F9AA46 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 		00EE8F48274DD57E00EAB818 = {
@@ -181,11 +188,12 @@
 		00EE8F53274DD57E00EAB818 /* GoNet Examen */ = {
 			isa = PBXGroup;
 			children = (
+				003E6B562754825D00F9AA46 /* Widgets */,
 				001395262751DE6E00105392 /* Conection */,
 				00139509274EA9CB00105392 /* Model */,
 				0013950A274EAABE00105392 /* View */,
 				0013950B274EAACA00105392 /* ViewModel */,
-				0013950D274EAAE400105392 /* Netrworking */,
+				0013950D274EAAE400105392 /* Tools */,
 				00EE8F54274DD57E00EAB818 /* AppDelegate.swift */,
 				00EE8F56274DD57E00EAB818 /* SceneDelegate.swift */,
 				00EE8F5A274DD57E00EAB818 /* Main.storyboard */,
@@ -477,7 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001395212750BBEE00105392 /* imageURL.swift in Sources */,
+				001395212750BBEE00105392 /* Tools.swift in Sources */,
 				001395282751DE8700105392 /* InternetConnectionManager.swift in Sources */,
 				001395232751459B00105392 /* TVTableViewCell.swift in Sources */,
 				00139515274ECF7300105392 /* MoviesTableViewCell.swift in Sources */,
@@ -671,6 +679,7 @@
 				DEVELOPMENT_TEAM = 5FD22G78A9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GoNet Examen/Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -700,6 +709,7 @@
 				DEVELOPMENT_TEAM = 5FD22G78A9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GoNet Examen/Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

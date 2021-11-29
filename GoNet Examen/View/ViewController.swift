@@ -73,12 +73,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return layout
     }
     
-    
     lazy var username: UITextField = {
         let text = UITextField()
         text.delegate = self
         text.placeholder = "Nombre de usuario"
         text.borderStyle = .roundedRect
+        text.isEnabled = true
 //        text.textColor = UIColor.lightGray
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
@@ -98,6 +98,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     lazy var btnlogin: UIButton = {
         let btn = UIButton()
+        btn.layer.cornerRadius = 10
+        btn.clipsToBounds = true
         btn.setTitle("Iniciar sesion", for: .normal)
         btn.backgroundColor = UIColor(named: "btnLogin")
         btn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loginFuncion)))
@@ -105,22 +107,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return btn
     }()
     
-   
-
-    
     lazy var labelMessage: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Request message"
+//        lbl.text = "Request message"
         lbl.numberOfLines = 0
         lbl.lineBreakMode = .byWordWrapping
         lbl.textAlignment = .center
-        lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
     lazy var viewlogin: UIView = {
        let view = UIView()
         view.isHidden = true
+        view.backgroundColor = UIColor(named: "bafound")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -175,6 +174,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         sc.tintColor = UIColor.white
         sc.selectedSegmentIndex = 0
         return sc
+    }()
+    
+    let btnMyAccount: UILabel = {
+        let item = UILabel()
+        item.text = "Usar cuenta invitado"
+        item.textColor = .systemBlue
+        item.textAlignment = .center
+        item.isUserInteractionEnabled = true
+        item.translatesAutoresizingMaskIntoConstraints = false
+        return item
     }()
     
     var toogleSgmt = false
@@ -259,7 +268,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemscount.append(1)
 //        sectioncount.append(2)
 
-        self.navigationItem.title = "TMDB Movies"
 
         navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -271,21 +279,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
         
-        monitorNetwork()
+        
+        if (UserDefaults.standard.string(forKey: userKeyDefault) != nil) {
+//            self.getPersistenciaDataDecrypted()
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationitem()
+//            self.monitorNetwork()
+            let loader = self.loader(message: "Por favor espere...")
+
+            self.getPersistenciaDataDecrypted(loader: loader)
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.title = "Login"
+            self.viewlogin.isHidden = false
+            self.tableViewMovies.isHidden = true
+            self.viewScroll.isHidden = true
+        }
+        
+        
+        self.monitorNetwork()
 
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-////        self.collectionViewMovie.removeObserver(self, forKeyPath: "contentSize")
-//        if InternetConnectionManager.isConnectedToNetwork(){
-//            print("Connected")
-//        }else{
-//            print("Connected Not")
-//        }
 
-    }
     
     var mon: NWPathMonitor = NWPathMonitor()
     var queue = DispatchQueue(label: "Monitor")
@@ -294,15 +311,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         mon.pathUpdateHandler = { p in
             if p.status == .satisfied {
                 DispatchQueue.main.async {
+//                    let loader = self.loader(message: "Por favor espere...")
+
                     print("Satisfied") // add animation connection
                     // Movie TMDB
-                    self.getPopularMovies()
-                    self.getRequestToken()
-                    self.getRecomendacionMovies()
                     
-                    // TV TMDB
-                    self.getPopularSeries()
-                    self.getRecomendacionTV()
+                    if (UserDefaults.standard.string(forKey: self.userKeyDefault) != nil) {
+                        self.navigationItem.rightBarButtonItem = nil
+                        self.navigationitem()
+//                        self.getPersistenciaDataDecrypted()
+
+                    } else {
+                        self.navigationItem.rightBarButtonItem = nil
+                        self.navigationItem.title = "Login"
+                        self.viewlogin.isHidden = false
+                        self.tableViewMovies.isHidden = true
+                        self.viewScroll.isHidden = true
+
+
+                    }
                 }
             } else if p.status == .requiresConnection {
                 DispatchQueue.main.async {
@@ -337,11 +364,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.present(alert, animated: true, completion: nil)
     }
-        
+     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        btnMyAccount.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loginInvitado)))
 
         guard let navigationController = navigationController else { return }
             navigationController.navigationBar.prefersLargeTitles = true
@@ -349,24 +377,50 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             navigationController.navigationBar.sizeToFit()
         
         self.view.backgroundColor = UIColor(named: "bafound")
-
-
+        
         LayoutConstraint()
-
-//        // Movie TMDB
-//        getPopularMovies()
-//        getRequestToken()
-//        getRecomendacionMovies()
-////        getPopularMovies()
-//
-//        // TV TMDB
-//        getPopularSeries()
-//        getRecomendacionTV()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(segmentClick))
         tapGesture.numberOfTapsRequired = 1
         segmentBtn.addGestureRecognizer(tapGesture)
+        
 
+    }
+    
+    var navString = "Logout"
+    func navigationitem(){
+        let label = UILabel()
+        label.text = navString
+        label.textColor = .systemBlue
+        label.textAlignment = .center
+        label.isEnabled = true
+        label.isUserInteractionEnabled = true
+        let item = UIBarButtonItem.init(customView: label)
+        let widthConstraint = label.widthAnchor.constraint(equalToConstant: 80)
+        let heightConstraint = label.heightAnchor.constraint(equalToConstant: 50)
+        heightConstraint.isActive = true
+        widthConstraint.isActive = true
+        self.navigationItem.rightBarButtonItem =  item
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.cerrarsesion)))
+            
+    }
+    
+    @objc func cerrarsesion() {
+        UserDefaults.standard.removeObject(forKey: self.userKeyDefault)
+        UserDefaults.standard.removeObject(forKey: self.passworKeyDefault)
+        UserDefaults.standard.removeObject(forKey: self.requestKeyDefault)
+        UserDefaults.standard.removeObject(forKey: self.sessionIDKeyDefault)
+        UserDefaults.standard.removeObject(forKey: self.userIDKeyDefault)
+        UserDefaults.standard.synchronize()
+        
+        DispatchQueue.main.async {
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.title = "Login"
+            self.viewlogin.isHidden = false
+            self.tableViewMovies.isHidden = true
+            self.viewScroll.isHidden = true
+        }
+        
     }
     
     @objc func orientationDidChangeNotification(_ notification: NSNotification) {
@@ -375,19 +429,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    let userKeyDefault = "userKeyDefault"
+    let passworKeyDefault = "passworKeyDefault"
+    let requestKeyDefault = "requestKeyDefault"
+    let sessionIDKeyDefault = "sessionIDKeyDefault"
+    let userIDKeyDefault = "userIDKeyDefault"
+    var usernameSt = String()
+    var passwordSt = String()
+
     @objc func loginFuncion(TapGesture: UITapGestureRecognizer) {
+        usernameSt = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        passwordSt = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+
         if username.text!.isEmpty {
             labelMessage.text = "Nombre de usuario vacio."
         } else if password.text!.isEmpty {
             labelMessage.text = "Contraseña vacio."
         } else {
                // create a session here
-            self.getRequestToken()
-//            self.loginWithToken(requestToken: self.requestToken!)
-//            self.loginWithToken(requestToken: requestToken!)
-            
+            let loader = self.loader(message: "Por favor espere...")
+            present(loader, animated: true, completion: nil)
+            self.getRequestToken(loader: loader)
 
         }
+    }
+    
+    @objc func loginInvitado(TapGesture: UITapGestureRecognizer) {
+        usernameSt = "RicardoAD"
+        passwordSt = "123456aD"
+
+        let message = "Es una aplicacion simple que en un caso real no se usara pero asigne mi cuenta para puedan iniciar sesion con ella y puedan ver mis listas agregadas a favoritos."
+        let alert = UIAlertController(title: "Atencion!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            let loader = self.loader(message: "Por favor espere...")
+            self.present(loader, animated: true, completion: nil)
+            self.getRequestToken(loader: loader)
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     let apiKey = "7662169d6cde796d24b257cd0f8a268e"
@@ -395,7 +475,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let baseURLSecureString = "https://api.themoviedb.org/3/"
     var requestToken = String()
     
-    func getRequestToken() {
+    func getRequestToken(loader: UIAlertController) {
         let urlString = baseURLSecureString + getTokenMethod + "?api_key=" + apiKey
         let url = NSURL(string: urlString)!
         let request = NSMutableURLRequest(url: url as URL)
@@ -405,6 +485,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let error = downloadError {
                 DispatchQueue.main.async {
                     self.labelMessage.text = "Login Failed. (Request token.)"
+                    self.viewlogin.isHidden = false
+                    
+                    self.tableViewTV.isHidden = true
+                    self.viewScrollTV.isHidden = true
+                    
+                    self.tableViewMovies.isHidden = true
+                    self.viewScroll.isHidden = true
+                    
                 }
                 print("Could not complete the request \(error)")
             } else {
@@ -412,7 +500,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if let requestToken = parsedResult["request_token"] as? String {
                     self.requestToken = requestToken
                     print("requestToken ", self.requestToken)
-                    self.loginWithToken(requestToken: self.requestToken)
+                    self.loginWithToken(requestToken: self.requestToken, loader: loader)
 
                     // we will soon replace this successful block with a method call
 
@@ -422,6 +510,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 } else {
                     DispatchQueue.main.async {
                         self.labelMessage.text = "Login Failed. (Request token.)"
+                        self.viewlogin.isHidden = false
+                        
+                        self.tableViewTV.isHidden = true
+                        self.viewScrollTV.isHidden = true
+                        
+                        self.tableViewMovies.isHidden = true
+                        self.viewScroll.isHidden = true
                     }
                     print("Could not find request_token in \(parsedResult)")
                 }
@@ -433,9 +528,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let loginMethod = "authentication/token/validate_with_login"
 
     // cambiar username y password por el de sus cuentas de TMDB
-    func loginWithToken(requestToken: String) {
-//        let parameters = "?api_key=\(apiKey)&request_token=\(requestToken)&username=\(username.text!)&password=\(password.text!)"
-        let parameters = "?api_key=\(apiKey)&request_token=\(requestToken)&username=RicardoAD&password=123456aD"
+    func loginWithToken(requestToken: String, loader: UIAlertController) {
+        let parameters = "?api_key=\(apiKey)&request_token=\(requestToken)&username=\(self.usernameSt)&password=\(self.passwordSt)"
+//        let parameters = "?api_key=\(apiKey)&request_token=\(requestToken)&username=RicardoAD&password=123456aD"
 
         let urlString = baseURLSecureString + loginMethod + parameters
         let url = NSURL(string: urlString)!
@@ -452,9 +547,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let parsedResult = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 if let success = parsedResult["success"] as? Bool {
                     // we will soon replace this successful block with a method call
-                    self.getSessionID(requestToken: self.requestToken)
+                    self.getSessionID(requestToken: self.requestToken, loader: loader)
                     DispatchQueue.main.async {
                         self.labelMessage.text = "Login status: \(success)"
+
                     }
                 } else {
                     if let status_code = parsedResult["status_code"] as? Int {
@@ -465,6 +561,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     } else {
                         DispatchQueue.main.async {
                             self.labelMessage.text = "Login Failed. (Login Step.)"
+                            
                         }
                         print("Could not find success in \(parsedResult)")
                     }
@@ -475,9 +572,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     let getSessionIdMethod = "authentication/session/new"
-    var sessionID: String?
+    var sessionID = String()
 
-    func getSessionID(requestToken: String) {
+    func getSessionID(requestToken: String, loader: UIAlertController) {
         let parameters = "?api_key=\(apiKey)&request_token=\(requestToken)"
         let urlString = baseURLSecureString + getSessionIdMethod + parameters
         let url = NSURL(string: urlString)!
@@ -488,6 +585,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let error = downloadError {
                 DispatchQueue.main.async {
                     self.labelMessage.text = "Login Failed. (Session ID.)"
+                    
+                    
                 }
                 print("Could not complete the request \(error)")
             } else {
@@ -496,13 +595,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.sessionID = sessionID
                     // we will soon replace this successful block with a method call
                     print("sesion ID: ", sessionID)
-                    self.getUserID(sessionID: self.sessionID!)
+                    self.getUserID(sessionID: self.sessionID, loader: loader)
                     DispatchQueue.main.async {
                         self.labelMessage.text = "Session ID: \(sessionID)"
+                        
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.labelMessage.text = "Login Failed. (Session ID.)"
+                        
                     }
                     print("Could not find session_id in \(parsedResult)")
                 }
@@ -512,9 +613,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     let getUserIdMethod = "account"
-    var userID: Int?
+    var userID = Int()
 
-    func getUserID(sessionID: String) {
+    func getUserID(sessionID: String, loader: UIAlertController) {
         let urlString = baseURLSecureString + getUserIdMethod + "?api_key=" + apiKey + "&session_id=" + sessionID
         let url = NSURL(string: urlString)!
         let request = NSMutableURLRequest(url: url as URL)
@@ -530,15 +631,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let parsedResult = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 if let userID = parsedResult["id"] as? Int {
                     self.userID = userID
-                    // we will soon replace this successful block with a method call
-                    
-                    print("user id: ", userID)
-                    self.completeLoginFavMovies()
-                    self.completeLoginFavTV()
-                    
+                                        
                     DispatchQueue.main.async {
+                        self.navigationItem.title = "TMDB Movies"
+                        self.navString = "Logout"
                         self.labelMessage.text = "your user id: \(userID)"
+                        self.completeLoginFavMovies(loader: loader)
+                        self.completeLoginFavTV()
+                        
+                        self.getPopularMovies()
+                        self.getPopularSeries()
+                        
+                        self.getRecomendacionMovies()
+                        self.getRecomendacionTV()
                     }
+                    
                 } else {
                     DispatchQueue.main.async {
                         self.labelMessage.text = "Login Failed. (Get userID.)"
@@ -550,9 +657,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         task.resume()
     }
     
-    func completeLoginFavMovies() {
+    func completeLoginFavMovies(loader: UIAlertController) {
         let getFavoritesMethod = "account/\(String(describing: self.userID))/favorite/movies"
-        let urlString = baseURLSecureString + getFavoritesMethod + "?api_key=" + apiKey + "&session_id=" + sessionID!
+        let urlString = baseURLSecureString + getFavoritesMethod + "?api_key=" + apiKey + "&session_id=" + sessionID
         let url = NSURL(string: urlString)!
         let request = NSMutableURLRequest(url: url as URL)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -561,19 +668,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let error = downloadError {
                 DispatchQueue.main.async {
                     self.labelMessage.text = "Cannot retrieve information about user \(String(describing: self.userID))."
+                    self.viewlogin.isHidden = false
+                    
+                    self.tableViewTV.isHidden = true
+                    self.viewScrollTV.isHidden = true
+                    
+                    self.tableViewMovies.isHidden = true
+                    self.viewScroll.isHidden = true
+                    self.pausarLoader(loader: loader)
+                    
                 }
                 print("Could not complete the request \(error)")
             } else {
                 self.datalist.removeAll()
                 do {
                     let result = try JSONDecoder().decode(MovieResult.self, from: data!)
-//                    self.datalist.removeAll()
                     DispatchQueue.main.async {
                         self.datalist = result.results
-//                        print("contador de peliculas: ", self.datalist.count)
-//                        print("datos de peliculas: ", result.results)
 
                         self.tableViewMovies.reloadData()
+                        self.savePersistenciaDataCrypet()
+
+
+                        self.pausarLoader(loader: loader)
+                        
                     }
 
                     print("movies favoritos ", result.results)
@@ -587,9 +705,47 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         task.resume()
     }
     
+    
+    func savePersistenciaDataCrypet() {
+        let cryptedUsername = self.encrypt(textEncrypt: self.usernameSt, password: oncryptKey)
+        let cryptedPassword = self.encrypt(textEncrypt: self.passwordSt, password: oncryptKey)
+        let cryptedRequest = self.encrypt(textEncrypt: self.requestToken, password: oncryptKey)
+        let cryptedSessionID = self.encrypt(textEncrypt: self.sessionID, password: oncryptKey)
+        let cryptedUserID = self.encrypt(textEncrypt: String(self.userID), password: oncryptKey)
+
+        UserDefaults.standard.set(cryptedUsername, forKey: self.userKeyDefault)
+        UserDefaults.standard.set(cryptedPassword, forKey: self.passworKeyDefault)
+        UserDefaults.standard.set(cryptedRequest, forKey: self.requestKeyDefault)
+        UserDefaults.standard.set(cryptedSessionID, forKey: self.sessionIDKeyDefault)
+        UserDefaults.standard.set(cryptedUserID, forKey: self.userIDKeyDefault)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getPersistenciaDataDecrypted(loader: UIAlertController) {
+        let decryptedUsernameSt = UserDefaults.standard.string(forKey: self.userKeyDefault)!
+        let decryptedPasswordSt = UserDefaults.standard.string(forKey: self.passworKeyDefault)!
+        let decrypedRequestToken = UserDefaults.standard.string(forKey: self.requestKeyDefault)!
+        let decryptedSessionID = UserDefaults.standard.string(forKey: self.sessionIDKeyDefault)!
+        let decryptedUserID = UserDefaults.standard.string(forKey: self.userIDKeyDefault)!
+        
+        usernameSt = self.decrypt(oncryptedText: decryptedUsernameSt, password: oncryptKey)
+        passwordSt = self.decrypt(oncryptedText: decryptedPasswordSt, password: oncryptKey)
+        requestToken = self.decrypt(oncryptedText: decrypedRequestToken, password: oncryptKey)
+        sessionID = self.decrypt(oncryptedText: decryptedSessionID, password: oncryptKey)
+        userID = Int(self.decrypt(oncryptedText: decryptedUserID, password: oncryptKey))!
+        
+        DispatchQueue.main.async {
+            self.getUserID(sessionID: self.sessionID, loader: loader)
+//            self.completeLoginFavMovies(loader: loader)
+//            self.completeLoginFavTV()
+            
+        }
+
+    }
+    
     func completeLoginFavTV() {
         let getFavoritesMethod = "account/\(String(describing: self.userID))/favorite/tv"
-        let urlString = baseURLSecureString + getFavoritesMethod + "?api_key=" + apiKey + "&session_id=" + sessionID!
+        let urlString = baseURLSecureString + getFavoritesMethod + "?api_key=" + apiKey + "&session_id=" + sessionID
         print("url tv: ", urlString)
 
         let url = NSURL(string: urlString)!
@@ -607,15 +763,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 do {
                     let result = try JSONDecoder().decode(TVResultTop.self, from: data!)
-//                    self.datalist.removeAll()
                     DispatchQueue.main.async {
                         self.datalistTV = result.results
-//                        print("contador de peliculas tv: ", self.datalistTV.count)
 
                         self.tableViewTV.reloadData()
                     }
-
-//                    print("movies favoritos ", result.results)
 
                 } catch {
                     
@@ -635,11 +787,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.datalistTop_rated.removeAll()
             do {
                 let result = try JSONDecoder().decode(MovieResultTopRated.self, from: data!)
-//                print("top_rated: ", result)
-//                self.datalistTop_rated.removeAll()
                 DispatchQueue.main.async {
                     self.datalistTop_rated = result.results
-//                    self.tableViewMovies.reloadData()
+                    
+                    self.viewlogin.isHidden = true
+                    self.tableViewMovies.isHidden = false
+                    self.viewScroll.isHidden = false
+                    self.navigationItem.rightBarButtonItem = nil
+                    self.navigationitem()
+
 //
                 }
             } catch {
@@ -678,7 +834,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var timer = Timer()
     func getPopularMovies() {
         let popularMovies = "https://api.themoviedb.org/3/movie/top_rated?api_key=7662169d6cde796d24b257cd0f8a268e&language=en-US&page=1"
-
+//        let getFavoritesMethod = "account/\(String(describing: self.userID))/rated/movies"
+//        let urlString = baseURLSecureString + getFavoritesMethod + "?api_key=" + apiKey + "&session_id=" + sessionID!
         URLSession.shared.dataTask(with: URLRequest(url: URL(string: popularMovies)!)) {
             (data, req, error) in
             self.datalistPageSwipe.removeAll()
@@ -737,6 +894,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func getPopularSeries() {
         let urlTV = "https://api.themoviedb.org/3/tv/103768/recommendations?api_key=7662169d6cde796d24b257cd0f8a268e&language=en-US&page=1"
+//        let urlTV = "https://api.themoviedb.org/3/tv/top_rated?api_key=7662169d6cde796d24b257cd0f8a268e&language=en-US&page=1"
 //        let urlTV = "https://api.themoviedb.org/3/tv/popular?api_key=7662169d6cde796d24b257cd0f8a268e&language=en-US&page=1"
 //        let urlTV = "https://api.themoviedb.org/3/tv/popular?api_key=7662169d6cde796d24b257cd0f8a268e&language=en-US&page=1"
 
@@ -771,7 +929,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                                 self.viewScrollTV.contentSize.width = self.viewEspacioTV.frame.size.width * CGFloat(i+1)
 
                             case .pad:
-                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: self.viewEspacioTV.frame.size.width - 20, height: self.viewScrollTV.frame.size.height)
+                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: self.viewEspacioTV.frame.size.width - 20, height: self.viewScrollTV.frame.size.height + 150)
                                 self.viewScrollTV.contentSize.width = self.viewEspacioTV.frame.size.width * CGFloat(i+1)
 
                             default: break
@@ -794,11 +952,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-//    func savePersistanceData(namePlist: String, data: [String : Any]) {
 
-//    }
-
-    
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {
         let imageView = tapGesture.view as? UIImageView
         let VC = DetailsViewController()
@@ -831,6 +985,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(viewEspacio)
         self.scrollView.addSubview(viewEspacioTV)
+        self.scrollView.addSubview(viewlogin)
         
         viewEspacioTV.isHidden = true
         tableViewTV.isHidden = true
@@ -843,19 +998,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.viewEspacio.addSubview(viewScroll)
         self.viewEspacioTV.addSubview(viewScrollTV)
 
-        self.scrollView.addSubview(viewlogin)
+        self.view.addSubview(viewlogin)
         self.viewlogin.addSubview(username)
         self.viewlogin.addSubview(password)
         self.viewlogin.addSubview(btnlogin)
         self.viewlogin.addSubview(labelMessage)
-        
-        //tv
-        
-
-//        self.view.addSubview(username)
-//        self.view.addSubview(password)
-//        self.view.addSubview(btnlogin)
-//        self.view.addSubview(labelMessage)
+        self.viewlogin.addSubview(btnMyAccount)
+                
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
             scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -905,10 +1054,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableViewTV.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor), // eliminando esto hace que el puedan scrollear
             tableViewTV.heightAnchor.constraint(equalToConstant: 650),
             
-            viewlogin.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor),
-            viewlogin.leftAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leftAnchor),
-            viewlogin.rightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.rightAnchor),
-            viewlogin.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            viewlogin.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            viewlogin.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            viewlogin.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            viewlogin.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             
             username.topAnchor.constraint(equalTo: self.viewlogin.topAnchor, constant: 20),
             username.leftAnchor.constraint(equalTo: self.viewlogin.leftAnchor, constant: 50),
@@ -918,15 +1067,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             password.leftAnchor.constraint(equalTo: self.viewlogin.leftAnchor, constant: 50),
             password.rightAnchor.constraint(equalTo: self.viewlogin.rightAnchor, constant: -50),
             
-            btnlogin.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 20),
-            btnlogin.leftAnchor.constraint(equalTo: self.viewlogin.leftAnchor, constant: 15),
-            btnlogin.rightAnchor.constraint(equalTo: self.viewlogin.rightAnchor, constant: -15),
+            btnlogin.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 65),
+            btnlogin.widthAnchor.constraint(equalToConstant: 250),
+            btnlogin.heightAnchor.constraint(equalToConstant: 40),
+            btnlogin.centerXAnchor.constraint(equalTo: self.viewlogin.centerXAnchor),
             
             labelMessage.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
             labelMessage.widthAnchor.constraint(equalToConstant: 150),
             labelMessage.centerXAnchor.constraint(equalTo: self.viewlogin.centerXAnchor),
 
-            
+            btnMyAccount.topAnchor.constraint(equalTo: self.btnlogin.bottomAnchor, constant: 20),
+            btnMyAccount.widthAnchor.constraint(equalToConstant: self.view.frame.size.width),
+            btnMyAccount.centerXAnchor.constraint(equalTo: self.viewlogin.centerXAnchor),
             
         ])
     }
