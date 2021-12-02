@@ -22,187 +22,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var datalistPageSwipeTV = [ResultseriesTop]()
 
     var itemscount = [Int]()
-    
-    lazy var scrollView: UIScrollView = {
-        let scrollview = UIScrollView()
-        scrollview.backgroundColor = .clear
-        scrollview.translatesAutoresizingMaskIntoConstraints = false
-        return scrollview
-    }()
-    
-    lazy var tableViewMovies: UITableView = {
-        let tableView = UITableView()
-        tableView.isHidden = false
-        tableView.register(MoviesTableViewCell.self, forCellReuseIdentifier: "MoviesTableViewCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.bounces = true
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
-    lazy var tableViewTV: UITableView = {
-        let tableView = UITableView()
-        tableView.isHidden = false
-        tableView.register(TVTableViewCell.self, forCellReuseIdentifier: "TVTableViewCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.bounces = true
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
-    
-    private func collectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-//        let cellWidthHeightConstant: CGFloat = UIScreen.main.bounds.width * 0.45
-
-        layout.sectionInset = UIEdgeInsets(top: 0,
-                                           left: 7.5,
-                                           bottom: 7.5,
-                                           right: 0)
-        layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: 165, height: 250)
-        
-        return layout
-    }
-    
-    lazy var username: UITextField = {
-        let text = UITextField()
-        text.delegate = self
-        text.placeholder = "Nombre de usuario"
-        text.borderStyle = .roundedRect
-        text.isEnabled = true
-//        text.textColor = UIColor.lightGray
-        text.translatesAutoresizingMaskIntoConstraints = false
-        return text
-    }()
-    
-    lazy var password: UITextField = {
-        let text = UITextField()
-        text.delegate = self
-        text.placeholder = "Contraseña"
-        text.borderStyle = .roundedRect
-//        text.textColor = UIColor.lightGray
-        text.translatesAutoresizingMaskIntoConstraints = false
-        return text
-    }()
-    
-
-    
-    lazy var btnlogin: UIButton = {
-        let btn = UIButton()
-        btn.layer.cornerRadius = 10
-        btn.clipsToBounds = true
-        btn.setTitle("Iniciar sesion", for: .normal)
-        btn.backgroundColor = UIColor(named: "btnLogin")
-        btn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loginFuncion)))
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
-    lazy var labelMessage: UILabel = {
-        let lbl = UILabel()
-//        lbl.text = "Request message"
-        lbl.numberOfLines = 0
-        lbl.lineBreakMode = .byWordWrapping
-        lbl.textAlignment = .center
-        return lbl
-    }()
-    
-    lazy var viewlogin: UIView = {
-       let view = UIView()
-        view.isHidden = true
-        view.backgroundColor = UIColor(named: "bafound")
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var pageControl: UIPageControl = {
-        let pagecontrol = UIPageControl()
-        pagecontrol.translatesAutoresizingMaskIntoConstraints = false
-        return pagecontrol
-    }()
-    
-    lazy var pageControlTV: UIPageControl = {
-        let pagecontrol = UIPageControl()
-        pagecontrol.translatesAutoresizingMaskIntoConstraints = false
-        return pagecontrol
-    }()
-    
-    lazy var viewScroll: UIScrollView = {
-        let view = UIScrollView()
-        view.isPagingEnabled = true
-        view.backgroundColor = .clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-        
-    lazy var viewEspacio: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var viewScrollTV: UIScrollView = {
-        let view = UIScrollView()
-        view.isPagingEnabled = true
-        view.backgroundColor = .clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-        
-    lazy var viewEspacioTV: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let segmentBtn: UISegmentedControl = {
-        let sc = UISegmentedControl(items: ["Movies", "TV Shows"])
-        sc.translatesAutoresizingMaskIntoConstraints = false
-        sc.tintColor = UIColor.white
-        sc.selectedSegmentIndex = 0
-        return sc
-    }()
-    
-    let btnMyAccount: UILabel = {
-        let item = UILabel()
-        item.text = "Usar cuenta invitado"
-        item.textColor = .systemBlue
-        item.textAlignment = .center
-        item.isUserInteractionEnabled = true
-        item.translatesAutoresizingMaskIntoConstraints = false
-        return item
-    }()
+    var ui = ViewControllerUI()
     
     var toogleSgmt = false
     @objc func segmentClick(tapGesture: UITapGestureRecognizer) {
         if toogleSgmt == false {
             toogleSgmt = true
-            segmentBtn.selectedSegmentIndex = 1
-            tableViewMovies.isHidden = true
-            viewEspacio.isHidden = true
-            tableViewTV.isHidden = false
-            viewEspacioTV.isHidden = false
+            ui.segmentBtn.selectedSegmentIndex = 1
+            ui.tableViewMovies.isHidden = true
+            ui.viewEspacio.isHidden = true
+            ui.tableViewTV.isHidden = false
+            ui.viewEspacioTV.isHidden = false
             
         } else {
             toogleSgmt = false
-            segmentBtn.selectedSegmentIndex = 0
-            tableViewMovies.isHidden = false
-            viewEspacio.isHidden = false
-            tableViewTV.isHidden = true
-            viewEspacioTV.isHidden = true
+            ui.segmentBtn.selectedSegmentIndex = 0
+            ui.tableViewMovies.isHidden = false
+            ui.viewEspacio.isHidden = false
+            ui.tableViewTV.isHidden = true
+            ui.viewEspacioTV.isHidden = true
         }
         
     }
@@ -219,7 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == tableViewMovies {
+        if tableView == ui.tableViewMovies {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesTableViewCell", for: indexPath) as! MoviesTableViewCell
             if indexPath.section == 0 {
                 cell.datalist = datalist
@@ -247,7 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
  
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if tableView == tableViewMovies {
+        if tableView == ui.tableViewMovies {
             return (section%2 == 0) ? "Mis peliculas favoritas" : "Recomendaciones para ti"
 
         }
@@ -291,9 +129,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             self.navigationItem.rightBarButtonItem = nil
             self.navigationItem.title = "Login"
-            self.viewlogin.isHidden = false
-            self.tableViewMovies.isHidden = true
-            self.viewScroll.isHidden = true
+            self.ui.viewlogin.isHidden = false
+            self.ui.tableViewMovies.isHidden = true
+            self.ui.viewScroll.isHidden = true
         }
         
         
@@ -324,9 +162,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     } else {
                         self.navigationItem.rightBarButtonItem = nil
                         self.navigationItem.title = "Login"
-                        self.viewlogin.isHidden = false
-                        self.tableViewMovies.isHidden = true
-                        self.viewScroll.isHidden = true
+                        self.ui.viewlogin.isHidden = false
+                        self.ui.tableViewMovies.isHidden = true
+                        self.ui.viewScroll.isHidden = true
 
 
                     }
@@ -369,7 +207,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnMyAccount.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loginInvitado)))
+        ui.username.delegate = self
+        ui.password.delegate = self
+        ui.tableViewMovies.delegate = self
+        ui.tableViewMovies.dataSource = self
+        ui.tableViewTV.delegate = self
+        ui.tableViewTV.dataSource = self
+        
+        ui.btnlogin.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loginFuncion)))
+        ui.btnMyAccount.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loginInvitado)))
 
         guard let navigationController = navigationController else { return }
             navigationController.navigationBar.prefersLargeTitles = true
@@ -378,11 +224,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.view.backgroundColor = UIColor(named: "bafound")
         
-        LayoutConstraint()
+        ui.LayoutConstraint(view: self.view)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(segmentClick))
         tapGesture.numberOfTapsRequired = 1
-        segmentBtn.addGestureRecognizer(tapGesture)
+        ui.segmentBtn.addGestureRecognizer(tapGesture)
         
 
     }
@@ -413,15 +259,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         UserDefaults.standard.removeObject(forKey: self.userIDKeyDefault)
         UserDefaults.standard.synchronize()
         
-        DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
             self.navigationItem.rightBarButtonItem = nil
             self.navigationItem.title = "Login"
-            self.viewlogin.isHidden = false
-            self.tableViewMovies.isHidden = true
-            self.viewScroll.isHidden = true
+            ui.viewlogin.isHidden = false
+            ui.tableViewMovies.isHidden = true
+            ui.viewScroll.isHidden = true
         }
         
     }
+                                         
     
     @objc func orientationDidChangeNotification(_ notification: NSNotification) {
         if UIDevice.current.orientation == .portrait {
@@ -438,13 +285,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var passwordSt = String()
 
     @objc func loginFuncion(TapGesture: UITapGestureRecognizer) {
-        usernameSt = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        passwordSt = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            usernameSt = ui.username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            passwordSt = ui.password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        if username.text!.isEmpty {
-            labelMessage.text = "Nombre de usuario vacio."
-        } else if password.text!.isEmpty {
-            labelMessage.text = "Contraseña vacio."
+            if ui.username.text!.isEmpty {
+                ui.labelMessage.text = "Nombre de usuario vacio."
+            } else if ui.password.text!.isEmpty {
+                ui.labelMessage.text = "Contraseña vacio."
         } else {
                // create a session here
             let loader = self.loader(message: "Por favor espere...")
@@ -483,15 +330,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { data, response, downloadError in
             if let error = downloadError {
-                DispatchQueue.main.async {
-                    self.labelMessage.text = "Login Failed. (Request token.)"
-                    self.viewlogin.isHidden = false
+                DispatchQueue.main.async { [self] in
+                    ui.labelMessage.text = "Login Failed. (Request token.)"
+                    ui.viewlogin.isHidden = false
                     
-                    self.tableViewTV.isHidden = true
-                    self.viewScrollTV.isHidden = true
+                    ui.tableViewTV.isHidden = true
+                    ui.viewScrollTV.isHidden = true
                     
-                    self.tableViewMovies.isHidden = true
-                    self.viewScroll.isHidden = true
+                    ui.tableViewMovies.isHidden = true
+                    ui.viewScroll.isHidden = true
                     
                 }
                 print("Could not complete the request \(error)")
@@ -505,18 +352,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     // we will soon replace this successful block with a method call
 
                     DispatchQueue.main.async {
-                        self.labelMessage.text = "got request token: \(requestToken)"
+                        self.ui.labelMessage.text = "got request token: \(requestToken)"
                     }
                 } else {
-                    DispatchQueue.main.async {
-                        self.labelMessage.text = "Login Failed. (Request token.)"
-                        self.viewlogin.isHidden = false
+                    DispatchQueue.main.async { [self] in
+                        ui.labelMessage.text = "Login Failed. (Request token.)"
+                        ui.viewlogin.isHidden = false
                         
-                        self.tableViewTV.isHidden = true
-                        self.viewScrollTV.isHidden = true
+                        ui.tableViewTV.isHidden = true
+                        ui.viewScrollTV.isHidden = true
                         
-                        self.tableViewMovies.isHidden = true
-                        self.viewScroll.isHidden = true
+                        ui.tableViewMovies.isHidden = true
+                        ui.viewScroll.isHidden = true
                     }
                     print("Could not find request_token in \(parsedResult)")
                 }
@@ -540,7 +387,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let task = session.dataTask(with: request as URLRequest) { data, response, downloadError in
             if let error = downloadError {
                 DispatchQueue.main.async {
-                    self.labelMessage.text = "Login Failed. (Login Step.)"
+                    self.ui.labelMessage.text = "Login Failed. (Login Step.)"
                 }
                 print("Could not complete the request \(error)")
             } else {
@@ -549,18 +396,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     // we will soon replace this successful block with a method call
                     self.getSessionID(requestToken: self.requestToken, loader: loader)
                     DispatchQueue.main.async {
-                        self.labelMessage.text = "Login status: \(success)"
+                        self.ui.labelMessage.text = "Login status: \(success)"
 
                     }
                 } else {
                     if let status_code = parsedResult["status_code"] as? Int {
                         DispatchQueue.main.async {
                             let message = parsedResult["status_message"]
-                            self.labelMessage.text = "\(status_code): \(message!)"
+                            self.ui.labelMessage.text = "\(status_code): \(message!)"
                         }
                     } else {
-                        DispatchQueue.main.async {
-                            self.labelMessage.text = "Login Failed. (Login Step.)"
+                        DispatchQueue.main.async { [self] in
+                            ui.labelMessage.text = "Login Failed. (Login Step.)"
                             
                         }
                         print("Could not find success in \(parsedResult)")
@@ -584,7 +431,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let task = session.dataTask(with: request as URLRequest) { data, response, downloadError in
             if let error = downloadError {
                 DispatchQueue.main.async {
-                    self.labelMessage.text = "Login Failed. (Session ID.)"
+                    self.ui.labelMessage.text = "Login Failed. (Session ID.)"
                     
                     
                 }
@@ -597,12 +444,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     print("sesion ID: ", sessionID)
                     self.getUserID(sessionID: self.sessionID, loader: loader)
                     DispatchQueue.main.async {
-                        self.labelMessage.text = "Session ID: \(sessionID)"
+                        self.ui.labelMessage.text = "Session ID: \(sessionID)"
                         
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.labelMessage.text = "Login Failed. (Session ID.)"
+                        self.ui.labelMessage.text = "Login Failed. (Session ID.)"
                         
                     }
                     print("Could not find session_id in \(parsedResult)")
@@ -624,7 +471,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let task = session.dataTask(with: request as URLRequest) { data, response, downloadError in
             if let error = downloadError {
                 DispatchQueue.main.async {
-                    self.labelMessage.text = "Login Failed. (Get userID.)"
+                    self.ui.labelMessage.text = "Login Failed. (Get userID.)"
                 }
                 print("Could not complete the request \(error)")
             } else {
@@ -635,7 +482,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     DispatchQueue.main.async {
                         self.navigationItem.title = "TMDB Movies"
                         self.navString = "Logout"
-                        self.labelMessage.text = "your user id: \(userID)"
+                        self.ui.labelMessage.text = "your user id: \(userID)"
                         self.completeLoginFavMovies(loader: loader)
                         self.completeLoginFavTV()
                         
@@ -648,7 +495,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     
                 } else {
                     DispatchQueue.main.async {
-                        self.labelMessage.text = "Login Failed. (Get userID.)"
+                        self.ui.labelMessage.text = "Login Failed. (Get userID.)"
                     }
                     print("Could not find user id in \(parsedResult)")
                 }
@@ -667,14 +514,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let task = session.dataTask(with: request as URLRequest) { data, response, downloadError in
             if let error = downloadError {
                 DispatchQueue.main.async {
-                    self.labelMessage.text = "Cannot retrieve information about user \(String(describing: self.userID))."
-                    self.viewlogin.isHidden = false
+                    self.ui.labelMessage.text = "Cannot retrieve information about user \(String(describing: self.userID))."
+                    self.ui.viewlogin.isHidden = false
                     
-                    self.tableViewTV.isHidden = true
-                    self.viewScrollTV.isHidden = true
+                    self.ui.tableViewTV.isHidden = true
+                    self.ui.viewScrollTV.isHidden = true
                     
-                    self.tableViewMovies.isHidden = true
-                    self.viewScroll.isHidden = true
+                    self.ui.tableViewMovies.isHidden = true
+                    self.ui.viewScroll.isHidden = true
                     self.pausarLoader(loader: loader)
                     
                 }
@@ -686,7 +533,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     DispatchQueue.main.async {
                         self.datalist = result.results
 
-                        self.tableViewMovies.reloadData()
+                        self.ui.tableViewMovies.reloadData()
                         self.savePersistenciaDataCrypet()
 
 
@@ -755,18 +602,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.datalistTV.removeAll()
         let task = session.dataTask(with: request as URLRequest) { data, response, downloadError in
             if let error = downloadError {
-                DispatchQueue.main.async {
-                    self.labelMessage.text = "Cannot retrieve information about user \(String(describing: self.userID))."
+                DispatchQueue.main.async { [self] in
+                    self.ui.labelMessage.text = "Cannot retrieve information about user \(String(describing: self.userID))."
                 }
                 print("Could not complete the request \(error)")
             } else {
                 
                 do {
                     let result = try JSONDecoder().decode(TVResultTop.self, from: data!)
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
                         self.datalistTV = result.results
 
-                        self.tableViewTV.reloadData()
+                        self.ui.tableViewTV.reloadData()
                     }
 
                 } catch {
@@ -787,12 +634,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.datalistTop_rated.removeAll()
             do {
                 let result = try JSONDecoder().decode(MovieResultTopRated.self, from: data!)
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     self.datalistTop_rated = result.results
                     
-                    self.viewlogin.isHidden = true
-                    self.tableViewMovies.isHidden = false
-                    self.viewScroll.isHidden = false
+                    self.ui.viewlogin.isHidden = true
+                    self.ui.tableViewMovies.isHidden = false
+                    self.ui.viewScroll.isHidden = false
                     self.navigationItem.rightBarButtonItem = nil
                     self.navigationitem()
 
@@ -845,9 +692,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("scroll page: ", result)
 
 //                self.datalistTop_rated.removeAll()
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     self.datalistPageSwipe = result.results
-                    self.pageControl.numberOfPages = self.datalistPageSwipe.count
+                    ui.pageControl.numberOfPages = self.datalistPageSwipe.count
                     
                         for i in 0..<self.datalistPageSwipe.count{
 
@@ -860,16 +707,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
                             self.actualizarDatos(imagenURL: urlimg, imagePelicula: imageview)
 
-                            let xPos = CGFloat(i) * self.viewScroll.frame.size.width
+                            let xPos = CGFloat(i) * ui.viewScroll.frame.size.width
                             // add when rotate screen y cambiar imageview.frame el widht por height del viewespacio
                             switch UIDevice.current.userInterfaceIdiom {
                             case .phone:
-                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: self.viewEspacio.frame.size.width - 20, height: self.viewScroll.frame.size.height)
-                                self.viewScroll.contentSize.width = self.viewEspacio.frame.size.width * CGFloat(i+1)
+                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: ui.viewEspacio.frame.size.width - 20, height: ui.viewScroll.frame.size.height)
+                                ui.viewScroll.contentSize.width = ui.viewEspacio.frame.size.width * CGFloat(i+1)
 
                             case .pad:
-                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: self.viewEspacio.frame.size.width - 20, height: self.viewScroll.frame.size.height)
-                                self.viewScroll.contentSize.width = self.viewEspacio.frame.size.width * CGFloat(i+1)
+                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: ui.viewEspacio.frame.size.width - 20, height: ui.viewScroll.frame.size.height)
+                                ui.viewScroll.contentSize.width = ui.viewEspacio.frame.size.width * CGFloat(i+1)
 
 
 
@@ -877,7 +724,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
                             }
 
-                            self.viewScroll.addSubview(imageview)
+                            ui.viewScroll.addSubview(imageview)
                             imageview.isUserInteractionEnabled = true
 
                             imageview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(tapGesture:)) )  )
@@ -906,9 +753,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                let myJson = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: AnyObject]
 
 
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     self.datalistPageSwipeTV = result.results
-                    self.pageControlTV.numberOfPages = self.datalistPageSwipeTV.count
+                    ui.pageControlTV.numberOfPages = self.datalistPageSwipeTV.count
 //                    self.savePersistanceData(namePlist: "movfavoritos", data: myJson)
                         for i in 0..<self.datalistPageSwipeTV.count{
 
@@ -920,23 +767,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             let urlimg = result.results[i].poster_path
 
                             self.actualizarDatos(imagenURL: urlimg, imagePelicula: imageview)
-                            let xPos = CGFloat(i) * self.viewScrollTV.frame.size.width
+                            let xPos = CGFloat(i) * ui.viewScrollTV.frame.size.width
 
                             // add when rotate screen y cambiar imageview.frame el widht por height del viewespacio
                             switch UIDevice.current.userInterfaceIdiom {
                             case .phone:
-                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: self.viewEspacioTV.frame.size.width - 20, height: self.viewScrollTV.frame.size.height)
-                                self.viewScrollTV.contentSize.width = self.viewEspacioTV.frame.size.width * CGFloat(i+1)
+                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: ui.viewEspacioTV.frame.size.width - 20, height: ui.viewScrollTV.frame.size.height)
+                                ui.viewScrollTV.contentSize.width = ui.viewEspacioTV.frame.size.width * CGFloat(i+1)
 
                             case .pad:
-                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: self.viewEspacioTV.frame.size.width - 20, height: self.viewScrollTV.frame.size.height + 150)
-                                self.viewScrollTV.contentSize.width = self.viewEspacioTV.frame.size.width * CGFloat(i+1)
+                                imageview.frame = CGRect(x: xPos + 10, y: 0, width: ui.viewEspacioTV.frame.size.width - 20, height: ui.viewScrollTV.frame.size.height + 150)
+                                ui.viewScrollTV.contentSize.width = ui.viewEspacioTV.frame.size.width * CGFloat(i+1)
 
                             default: break
 
                             }
 
-                            self.viewScrollTV.addSubview(imageview)
+                            ui.viewScrollTV.addSubview(imageview)
                             imageview.isUserInteractionEnabled = true
 
                             imageview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTapTV(tapGesture:)) )  )
@@ -981,109 +828,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
-    func LayoutConstraint() {
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(viewEspacio)
-        self.scrollView.addSubview(viewEspacioTV)
-        self.scrollView.addSubview(viewlogin)
-        
-        viewEspacioTV.isHidden = true
-        tableViewTV.isHidden = true
-        
-        self.scrollView.addSubview(tableViewMovies)
-        self.scrollView.addSubview(tableViewTV)
-
-        self.scrollView.addSubview(segmentBtn)
-
-        self.viewEspacio.addSubview(viewScroll)
-        self.viewEspacioTV.addSubview(viewScrollTV)
-
-        self.view.addSubview(viewlogin)
-        self.viewlogin.addSubview(username)
-        self.viewlogin.addSubview(password)
-        self.viewlogin.addSubview(btnlogin)
-        self.viewlogin.addSubview(labelMessage)
-        self.viewlogin.addSubview(btnMyAccount)
-                
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            
-            segmentBtn.leftAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leftAnchor, constant: 10),
-            segmentBtn.rightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.rightAnchor, constant: -10),
-            segmentBtn.heightAnchor.constraint(equalToConstant: 35),
-            segmentBtn.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
-
-            viewEspacio.leftAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leftAnchor, constant: 10),
-            viewEspacio.rightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.rightAnchor, constant: -10),
-            viewEspacio.heightAnchor.constraint(equalToConstant: 250),
-            viewEspacio.topAnchor.constraint(equalTo: segmentBtn.bottomAnchor, constant: 15),
-            
-                        
-            viewScroll.heightAnchor.constraint(equalToConstant: 250),
-            viewScroll.topAnchor.constraint(equalTo: viewEspacio.topAnchor, constant: 0),
-            viewScroll.leftAnchor.constraint(equalTo: viewEspacio.leftAnchor, constant: 0),
-            viewScroll.rightAnchor.constraint(equalTo: viewEspacio.rightAnchor, constant: 0),
-            viewScroll.centerXAnchor.constraint(equalTo: viewEspacio.centerXAnchor),
-            viewScroll.centerYAnchor.constraint(equalTo: viewEspacio.centerYAnchor),
-            
-            viewEspacioTV.leftAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leftAnchor, constant: 10),
-            viewEspacioTV.rightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.rightAnchor, constant: -10),
-            viewEspacioTV.heightAnchor.constraint(equalToConstant: 250),
-            viewEspacioTV.topAnchor.constraint(equalTo: segmentBtn.bottomAnchor, constant: 15),
-            
-                        
-            viewScrollTV.heightAnchor.constraint(equalToConstant: 250),
-            viewScrollTV.topAnchor.constraint(equalTo: viewEspacioTV.topAnchor, constant: 0),
-            viewScrollTV.leftAnchor.constraint(equalTo: viewEspacioTV.leftAnchor, constant: 0),
-            viewScrollTV.rightAnchor.constraint(equalTo: viewEspacioTV.rightAnchor, constant: 0),
-            viewScrollTV.centerXAnchor.constraint(equalTo: viewEspacioTV.centerXAnchor),
-            viewScrollTV.centerYAnchor.constraint(equalTo: viewEspacioTV.centerYAnchor),
-            
-            tableViewMovies.topAnchor.constraint(equalTo: viewEspacio.bottomAnchor),
-            tableViewMovies.leftAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leftAnchor),
-            tableViewMovies.rightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.rightAnchor),
-            tableViewMovies.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor), // eliminando esto hace que el puedan scrollear
-            tableViewMovies.heightAnchor.constraint(equalToConstant: 650),
-            
-            tableViewTV.topAnchor.constraint(equalTo: viewEspacioTV.bottomAnchor),
-            tableViewTV.leftAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leftAnchor),
-            tableViewTV.rightAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.rightAnchor),
-            tableViewTV.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor), // eliminando esto hace que el puedan scrollear
-            tableViewTV.heightAnchor.constraint(equalToConstant: 650),
-            
-            viewlogin.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            viewlogin.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            viewlogin.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            viewlogin.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            
-            username.topAnchor.constraint(equalTo: self.viewlogin.topAnchor, constant: 20),
-            username.leftAnchor.constraint(equalTo: self.viewlogin.leftAnchor, constant: 50),
-            username.rightAnchor.constraint(equalTo: self.viewlogin.rightAnchor, constant: -50),
-            
-            password.topAnchor.constraint(equalTo: username.bottomAnchor, constant: 10),
-            password.leftAnchor.constraint(equalTo: self.viewlogin.leftAnchor, constant: 50),
-            password.rightAnchor.constraint(equalTo: self.viewlogin.rightAnchor, constant: -50),
-            
-            btnlogin.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 65),
-            btnlogin.widthAnchor.constraint(equalToConstant: 250),
-            btnlogin.heightAnchor.constraint(equalToConstant: 40),
-            btnlogin.centerXAnchor.constraint(equalTo: self.viewlogin.centerXAnchor),
-            
-            labelMessage.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
-            labelMessage.widthAnchor.constraint(equalToConstant: 150),
-            labelMessage.centerXAnchor.constraint(equalTo: self.viewlogin.centerXAnchor),
-
-            btnMyAccount.topAnchor.constraint(equalTo: self.btnlogin.bottomAnchor, constant: 20),
-            btnMyAccount.widthAnchor.constraint(equalToConstant: self.view.frame.size.width),
-            btnMyAccount.centerXAnchor.constraint(equalTo: self.viewlogin.centerXAnchor),
-            
-        ])
-    }
     
- 
 
 
 }

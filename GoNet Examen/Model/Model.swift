@@ -80,7 +80,7 @@ struct Result: Decodable {
     let id: Int
     let original_title: String
     let original_language: String
-    let title: String
+    let title: String // creo este es el error por eso no muestra en TVShows, en TVSHOW cambiar title por name que ahi esta el error
     let backdrop_path: String
     let popularity: Double
     let vote_count: Int
